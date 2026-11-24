@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /*function student(name)
+       {
+        console.log(`Student ${name} is created`);
+       }
+       const student1 = student("John");
+       const student2 = student("Alice");
+       function employee(name, company, college = "SECE"){
+        console.log(`Employee ${name} is working in ${company} and studied in ${college}`);
+       }
+       employee("Bob", "Google");
+       employee("Charlie", "Microsoft", "IIT");
+       employee("David", "Amazon");
+*/
+       let data1 = function(name){
+        return "Hello JavaScript";
+       }
+       console.log(data1());
+
+       //================Arrow Function================
+
+       let mult1 = () =>{
+        return "Hello this is a arrow funtion";
+       }
+
+       let mult2 = (a, b) => {
+        return a+b;
+       }
+
+       console.log(mult1());
+       console.log(mult2(10, 20));
+
+       let emp = function(){
+        return "Hello Employee";
+       }
+       console.log(emp());
+
+       //callback function
+
+       function sece(callback){
+        console.log("Hello SECE");
+        callback();
+       }
+       function student(){
+        console.log("Display Students");
+       }
+       sece(student);
+
+       function whatsapp(callback){
+        callback();
+       }
+       function notification(){
+        console.log("I am sending a notification");
+       }
+         whatsapp(notification);
+
+         //promise
+         //resolve, reject fulfilled
+         let fetch_api = new Promise((resolve, reject) => {
+            let api = true;
+            if(api){
+                resolve("Data is fetched successfully");
+            }else{
+                reject("Data is not fetched");
+            }
+         })
+         fetch_api.then((data) => console.log(data));
+
+ let order = new Promise((resolve, reject) => {
+            let api = true;
+            if(api){
+                setTimeout(() => {
+                    resolve("Order is placed successfully");
+                }, 2000);
+                //resolve("Order is placed successfully");
+            }else{
+                setTimeout(() => {
+                    reject("Order is not placed");
+                }, 2000);
+                //reject("Failed to place order due to some error");
+            }
+         })
+         order.then((data) => console.log(data));
+
+    </script>
+
+
+</body>
+</html>
