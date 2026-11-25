@@ -90,7 +90,112 @@
          })
          order.then((data) => console.log(data));
 
-    </script>
+     
+         //===============Objects=============
+         let emp1 = {
+           emp_name:"Yogapriya",
+           emp_id: 123,
+           salary: 50000000
+         }
+          //Dot notation
+          console.log(emp1.emp_name);
+          //square bracket notation
+          console.log(emp1["salary"]);
+
+          let emp2 = [{
+            emp_name:"Shamrutha",
+            emp_id: 456,
+            salary: 60000000,
+            skills: ["JavaScript", "React", "Java"]
+            },
+            {
+                emp_name:"Yuvasri",
+                emp_id: 789,
+                salary: 70000000,
+                skills: ["Python", "Django", "Flask"]
+            },
+            {
+                emp_name:"Sachin",
+                emp_id: 101,
+                salary: 80000000,
+                skills: ["C++", "Java", "Python"],
+                company:{
+                    c1: "Google",
+                    c2: "TCS",
+                    c2: "Infosys",
+                    c3: "Microsoft",
+                    c4: "Accenture"
+                }
+            }
+        ]
+        console.log(emp2[0]);
+        console.log(emp2[1].skills[0]);
+        console.log(emp2[2].skills[0]);
+        //console.log(emp2[2].company.c1);
+        //console.log(emp2[2].company.c2);
+        //console.log(emp2[2].company.c3);
+        console.log(emp2[2].company.c4);
+       //stringify and parse
+       //stringify - convert object to string
+       //parse - convert string to object
+       let emp3 = {
+        emp_name:"Yogapriya",
+        emp_id: 123,
+        salary: 50000000,
+        company: {
+            c1: "Amazon",
+            c2: "Google"
+        }
+    };
+    //let emp3_json = JSON.stringify(emp3);
+    //console.log(emp3_json);
+    //let emp3_obj = JSON.parse(emp3_json);
+    //console.log(emp3_obj);
+
+    let copied_data = emp3;
+    copied_data.salary = 70000000;// this will copy and change the data in the original
+    console.log("Original data" ,emp3.salary);
+    console.log("Copied data", copied_data);
+
+    //shallow copy(spread operator)
+    let copied__data = {...emp3};
+    copied__data.salary = 80000000;
+    console.log("Original : ", emp3);
+    console.log("Copied : " , copied__data);
+    let copied__Data = {...emp3};
+     copied__Data.company.c1 = "Microsoft";
+     console.log("Original : ", emp3.company.c1);
+     console.log("Copied data : ", copied__Data.company.c1);
+    
+     //deep copy(JSON.parse(JSON.stringify()))
+     let copied___data = JSON.parse(JSON.stringify(emp3));
+     copied___data.salary = 9000000;
+     console.log("Original : ", emp3);
+     console.log("Copied : ", copied___data);
+    
+     let copied___Data = JSON.parse(JSON.stringify(emp3));
+     copied___Data.company.c1 = "Infosys";
+     console.log("Original : ", emp3.company.c1);
+     console.log("Copied data : ", copied___Data.company.c1);
+
+     let student3 = {
+    name: "Arun",
+    age: 20,
+    address: {
+        city: "Chennai"
+    }
+};
+
+let student4 = structuredClone(student3);
+
+student4.name = "Rahul";
+student4.address.city = "Coimbatore";
+
+console.log(student3);
+console.log(student4)
+     
+
+</script>
 
 
 </body>
