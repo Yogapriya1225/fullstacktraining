@@ -253,41 +253,10 @@ function App() {
 export default App;
 */
 
-import Home from "./Home";
-import React from "react";
-import Flipcart from "./Components/Flipcart";
-import Electronics from "./Components/Electronics";
-import { MobileContext } from "./Components/MobileContext";
-import User from "./Hooks/Useeffect/User";
-
-//import Counter from "./Hooks/UseState/Counter"; //add <Counter />
-//import Score from "./Hooks/UseState/Score";
-//import "./App.css";
+import Registration from "./Components/Registration";
 
 function App() {
-  const mobile = {
-    name:"Samsung"
-  };
-  return (
-    <>
-    <center>
-      <h1>This is the App component</h1>
-      <hr/>
-      {/*<Counter/>*/}
-      <hr/>
-      
-      {/*<Flipcart mobile = {mobile}/>*/}
-
-      {/*Prop Drilling
-      Use Context hook*/}
-      <MobileContext.Provider value = {mobile}>
-        <Flipcart/>
-      </MobileContext.Provider>
-      <hr/>
-      <User/>
-    </center>
-    </>
-  );
+  return <Registration />;
 }
 
 export default App;
